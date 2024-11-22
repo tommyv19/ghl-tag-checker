@@ -29,7 +29,7 @@ def inbound_webhook():
             raise Exception("Errore simulato nella creazione del tag")
 
         # Successo simulato
-        logging.info(f"Tag '{tag_name}' gestito con successo.")
+            logging.info(f"Tag '{tag_name}' gestito con successo.")
         return jsonify({"status": "success", "message": f"Tag '{tag_name}' creato con successo"}), 200
 
     except Exception as e:
@@ -39,4 +39,4 @@ def inbound_webhook():
         return jsonify({"status": "failed", "message": f"Errore nella gestione del webhook: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=5001)
